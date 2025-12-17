@@ -38,6 +38,7 @@ identity:
 provider_type: website_crawl
 datasources:
   - datasources/search_extract.yaml
+  - datasources/crawl.yaml
 extra:
   python:
     source: provider/tavily_datasource.py

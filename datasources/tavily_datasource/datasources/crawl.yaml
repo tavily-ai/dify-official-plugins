@@ -1,0 +1,345 @@
+description:
+  en_US: Crawl a website starting from a root URL using Tavily Crawl API.
+  ja_JP: Tavily Crawl APIを使用してルートURLからウェブサイトをクロールします。
+  zh_Hans: 使用 Tavily Crawl API 从根 URL 开始爬取网站。
+  pt_BR: Rastreie um site a partir de um URL raiz usando a API Tavily Crawl.
+  zh_Hant: 使用 Tavily Crawl API 從根 URL 開始爬取網站。
+identity:
+  author: langgenius
+  label:
+    en_US: Tavily Crawl
+    ja_JP: Tavily クロール
+    zh_Hans: Tavily 爬取
+    pt_BR: Tavily Crawl
+    zh_Hant: Tavily 爬取
+  name: crawl
+parameters:
+- form: form
+  description:
+    en_US: The root URL to start crawling from.
+    ja_JP: クロールを開始するルートURL。
+    zh_Hans: 开始爬取的根 URL。
+    pt_BR: O URL raiz a partir do qual iniciar o rastreamento.
+    zh_Hant: 開始爬取的根 URL。
+  label:
+    en_US: URL
+    ja_JP: URL
+    zh_Hans: URL
+    pt_BR: URL
+    zh_Hant: URL
+  name: url
+  required: true
+  type: string
+- form: form
+  description:
+    en_US: Natural language instructions to guide the crawler's focus.
+    ja_JP: クローラーの焦点を導くための自然言語による指示。
+    zh_Hans: 用于指导爬虫聚焦的自然语言指令。
+    pt_BR: Instruções em linguagem natural para orientar o foco do rastreador.
+    zh_Hant: 用於指導爬蟲聚焦的自然語言指令。
+  label:
+    en_US: Instructions
+    ja_JP: 指示
+    zh_Hans: 指令
+    pt_BR: Instruções
+    zh_Hant: 指令
+  name: instructions
+  placeholder:
+    en_US: "e.g., Focus on pricing pages"
+    ja_JP: "例: 価格ページに焦点を当てる"
+    zh_Hans: "例如：关注定价页面"
+    pt_BR: "ex.: Foco em páginas de preços"
+    zh_Hant: "例如：關注定價頁面"
+  required: false
+  type: string
+- form: form
+  description:
+    en_US: Maximum depth of the crawl from the base URL (1-10)
+    ja_JP: ベースURLからのクロールの最大深度（1〜10）
+    zh_Hans: 从基础 URL 开始的最大爬取深度（1-10）
+    pt_BR: Profundidade máxima do rastreamento a partir do URL base (1-10)
+    zh_Hant: 從基礎 URL 開始的最大爬取深度（1-10）
+  label:
+    en_US: Max Depth
+    ja_JP: 最大深度
+    zh_Hans: 最大深度
+    pt_BR: Profundidade máxima
+    zh_Hant: 最大深度
+  name: max_depth
+  type: number
+  min: 1
+  max: 10
+  default: 1
+- form: form
+  description:
+    en_US: Maximum number of links to follow per page (1-50)
+    ja_JP: ページごとにフォローするリンクの最大数（1〜50）
+    zh_Hans: 每页跟踪的最大链接数（1-50）
+    pt_BR: Número máximo de links a seguir por página (1-50)
+    zh_Hant: 每頁跟蹤的最大連結數（1-50）
+  label:
+    en_US: Max Breadth
+    ja_JP: 最大幅
+    zh_Hans: 最大宽度
+    pt_BR: Largura máxima
+    zh_Hant: 最大寬度
+  name: max_breadth
+  type: number
+  min: 1
+  max: 50
+  default: 20
+- form: form
+  description:
+    en_US: Total number of links to process before stopping (1-100)
+    ja_JP: 停止前に処理するリンクの総数（1〜100）
+    zh_Hans: 停止前要处理的链接总数（1-100）
+    pt_BR: Número total de links a processar antes de parar (1-100)
+    zh_Hant: 停止前要處理的連結總數（1-100）
+  label:
+    en_US: Limit
+    ja_JP: 制限
+    zh_Hans: 限制
+    pt_BR: Limite
+    zh_Hant: 限制
+  name: limit
+  type: number
+  min: 1
+  max: 100
+  default: 50
+- form: form
+  description:
+    en_US: Regex patterns to include only specific URL paths (comma-separated)
+    ja_JP: 特定のURLパスのみを含める正規表現パターン（カンマ区切り）
+    zh_Hans: 仅包含特定 URL 路径的正则表达式模式（逗号分隔）
+    pt_BR: Padrões regex para incluir apenas caminhos de URL específicos (separados por vírgula)
+    zh_Hant: 僅包含特定 URL 路徑的正規表達式模式（逗號分隔）
+  label:
+    en_US: Select Paths
+    ja_JP: パスを選択
+    zh_Hans: 选择路径
+    pt_BR: Selecionar caminhos
+    zh_Hant: 選擇路徑
+  name: select_paths
+  placeholder:
+    en_US: "/docs/.*, /api/.*"
+    ja_JP: "/docs/.*, /api/.*"
+    zh_Hans: "/docs/.*, /api/.*"
+    pt_BR: "/docs/.*, /api/.*"
+    zh_Hant: "/docs/.*, /api/.*"
+  required: false
+  type: string
+- form: form
+  description:
+    en_US: Domains to include in the crawl (comma-separated)
+    ja_JP: クロールに含めるドメイン（カンマ区切り）
+    zh_Hans: 要包含在爬取中的域名（逗号分隔）
+    pt_BR: Domínios a incluir no rastreamento (separados por vírgula)
+    zh_Hant: 要包含在爬取中的域名（逗號分隔）
+  label:
+    en_US: Select Domains
+    ja_JP: ドメインを選択
+    zh_Hans: 选择域名
+    pt_BR: Selecionar domínios
+    zh_Hant: 選擇域名
+  name: select_domains
+  placeholder:
+    en_US: "example.com, docs.example.com"
+    ja_JP: "example.com, docs.example.com"
+    zh_Hans: "example.com, docs.example.com"
+    pt_BR: "example.com, docs.example.com"
+    zh_Hant: "example.com, docs.example.com"
+  required: false
+  type: string
+- form: form
+  description:
+    en_US: Regex patterns to exclude specific URL paths (comma-separated)
+    ja_JP: 特定のURLパスを除外する正規表現パターン（カンマ区切り）
+    zh_Hans: 排除特定 URL 路径的正则表达式模式（逗号分隔）
+    pt_BR: Padrões regex para excluir caminhos de URL específicos (separados por vírgula)
+    zh_Hant: 排除特定 URL 路徑的正規表達式模式（逗號分隔）
+  label:
+    en_US: Exclude Paths
+    ja_JP: パスを除外
+    zh_Hans: 排除路径
+    pt_BR: Excluir caminhos
+    zh_Hant: 排除路徑
+  name: exclude_paths
+  placeholder:
+    en_US: "/private/.*, /admin/.*"
+    ja_JP: "/private/.*, /admin/.*"
+    zh_Hans: "/private/.*, /admin/.*"
+    pt_BR: "/private/.*, /admin/.*"
+    zh_Hant: "/private/.*, /admin/.*"
+  required: false
+  type: string
+- form: form
+  description:
+    en_US: Domains to exclude from the crawl (comma-separated)
+    ja_JP: クロールから除外するドメイン（カンマ区切り）
+    zh_Hans: 要从爬取中排除的域名（逗号分隔）
+    pt_BR: Domínios a excluir do rastreamento (separados por vírgula)
+    zh_Hant: 要從爬取中排除的域名（逗號分隔）
+  label:
+    en_US: Exclude Domains
+    ja_JP: ドメインを除外
+    zh_Hans: 排除域名
+    pt_BR: Excluir domínios
+    zh_Hant: 排除域名
+  name: exclude_domains
+  placeholder:
+    en_US: "spam.com, ads.example.com"
+    ja_JP: "spam.com, ads.example.com"
+    zh_Hans: "spam.com, ads.example.com"
+    pt_BR: "spam.com, ads.example.com"
+    zh_Hant: "spam.com, ads.example.com"
+  required: false
+  type: string
+- form: form
+  description:
+    en_US: Allow following links to external domains
+    ja_JP: 外部ドメインへのリンクをフォローすることを許可
+    zh_Hans: 允许跟踪外部域名的链接
+    pt_BR: Permitir seguir links para domínios externos
+    zh_Hant: 允許跟蹤外部域名的連結
+  label:
+    en_US: Allow External
+    ja_JP: 外部を許可
+    zh_Hans: 允许外部
+    pt_BR: Permitir externo
+    zh_Hant: 允許外部
+  name: allow_external
+  type: boolean
+  default: false
+- form: form
+  description:
+    en_US: Include images in the crawl results
+    ja_JP: クロール結果に画像を含める
+    zh_Hans: 在爬取结果中包含图片
+    pt_BR: Incluir imagens nos resultados do rastreamento
+    zh_Hant: 在爬取結果中包含圖片
+  label:
+    en_US: Include Images
+    ja_JP: 画像を含める
+    zh_Hans: 包含图片
+    pt_BR: Incluir imagens
+    zh_Hant: 包含圖片
+  name: include_images
+  type: boolean
+  default: false
+- form: form
+  description:
+    en_US: Depth of content extraction - basic (faster) or advanced (more comprehensive)
+    ja_JP: コンテンツ抽出の深さ - 基本（高速）または詳細（より包括的）
+    zh_Hans: 内容提取深度 - basic（更快）或 advanced（更全面）
+    pt_BR: Profundidade da extração de conteúdo - básico (mais rápido) ou avançado (mais abrangente)
+    zh_Hant: 內容提取深度 - 基本（更快）或高級（更全面）
+  label:
+    en_US: Extract Depth
+    ja_JP: 抽出深度
+    zh_Hans: 提取深度
+    pt_BR: Profundidade de extração
+    zh_Hant: 提取深度
+  name: extract_depth
+  type: select
+  options:
+    - value: basic
+      label:
+        en_US: Basic
+        ja_JP: 基本
+        zh_Hans: 基础
+        pt_BR: Básico
+        zh_Hant: 基礎
+    - value: advanced
+      label:
+        en_US: Advanced
+        ja_JP: 詳細
+        zh_Hans: 高级
+        pt_BR: Avançado
+        zh_Hant: 高級
+  default: basic
+- form: form
+  description:
+    en_US: Format of the extracted content - markdown or text
+    ja_JP: 抽出されたコンテンツのフォーマット - マークダウンまたはテキスト
+    zh_Hans: 提取内容的格式 - markdown 或 text
+    pt_BR: Formato do conteúdo extraído - markdown ou texto
+    zh_Hant: 提取內容的格式 - markdown 或 text
+  label:
+    en_US: Format
+    ja_JP: フォーマット
+    zh_Hans: 格式
+    pt_BR: Formato
+    zh_Hant: 格式
+  name: format
+  type: select
+  options:
+    - value: markdown
+      label:
+        en_US: Markdown
+        ja_JP: マークダウン
+        zh_Hans: Markdown
+        pt_BR: Markdown
+        zh_Hant: Markdown
+    - value: text
+      label:
+        en_US: Text
+        ja_JP: テキスト
+        zh_Hans: 纯文本
+        pt_BR: Texto
+        zh_Hant: 純文本
+  default: markdown
+- form: form
+  description:
+    en_US: Include favicon URL for each result
+    ja_JP: 各結果にファビコンURLを含める
+    zh_Hans: 为每个结果包含网站图标 URL
+    pt_BR: Incluir URL do favicon para cada resultado
+    zh_Hant: 為每個結果包含網站圖標 URL
+  label:
+    en_US: Include Favicon
+    ja_JP: ファビコンを含める
+    zh_Hans: 包含网站图标
+    pt_BR: Incluir favicon
+    zh_Hant: 包含網站圖標
+  name: include_favicon
+  type: boolean
+  default: false
+- form: form
+  description:
+    en_US: Maximum time in seconds to wait for the crawl operation (10-150)
+    ja_JP: クロール操作を待機する最大時間（秒）（10〜150）
+    zh_Hans: 等待爬取操作的最大时间（秒）（10-150）
+    pt_BR: Tempo máximo em segundos para aguardar a operação de rastreamento (10-150)
+    zh_Hant: 等待爬取操作的最大時間（秒）（10-150）
+  label:
+    en_US: Timeout
+    ja_JP: タイムアウト
+    zh_Hans: 超时
+    pt_BR: Tempo limite
+    zh_Hant: 超時
+  name: timeout
+  type: number
+  min: 10
+  max: 150
+  default: 150
+
+output_schema:
+    type: object
+    properties:
+      source_url:
+        type: string
+        description: the URL of the crawled page
+      content:
+        type: string
+        description: the raw content extracted from the page
+      title:
+        type: string
+        description: the title of the page (empty - not provided by Tavily Crawl API)
+      description:
+        type: string
+        description: page description (empty - not provided by Tavily Crawl API)
+provider_type: website_crawl
+extra:
+  python:
+    source: datasources/crawl.py
+
