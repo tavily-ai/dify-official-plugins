@@ -37,7 +37,7 @@ parameters:
     label:
       en_US: Search Depth
       zh_Hans: 搜索深度
-    llm_description: The depth of the search. 'basic' for standard search, 'advanced' for more comprehensive results.
+    llm_description: The depth of the search. 'basic' for standard search, 'advanced' for more comprehensive results, 'fast' for low latency with high relevance (BETA), 'ultra-fast' for prioritizing latency above all else (BETA).
     options:
       - label:
           en_US: Basic
@@ -47,6 +47,14 @@ parameters:
           en_US: Advanced
           zh_Hans: 高级
         value: advanced
+      - label:
+          en_US: Fast (BETA)
+          zh_Hans: 快速 (BETA)
+        value: fast
+      - label:
+          en_US: Ultra-Fast (BETA)
+          zh_Hans: 超快速 (BETA)
+        value: ultra-fast
     required: false
     type: select
   - name: topic

@@ -32,11 +32,11 @@ parameters:
   type: string
 - form: form
   description:
-    en_US: The depth of search results - basic (faster) or advanced (more comprehensive)
-    ja_JP: 検索結果の深さ - 基本（高速）または詳細（より包括的）
-    zh_Hans: 搜索结果的深度 - basic（更快）或 advanced（更全面）
-    pt_BR: A profundidade dos resultados da pesquisa - básico (mais rápido) ou avançado (mais abrangente)
-    zh_Hant: 搜索結果的深度 - 基本（更快）或高級（更全面）
+    en_US: The depth of search results - basic (faster), advanced (more comprehensive), fast (BETA - low latency with high relevance), or ultra-fast (BETA - prioritizes latency)
+    ja_JP: 検索結果の深さ - 基本（高速）、詳細（より包括的）、fast（BETA - 低遅延で高関連性）、またはultra-fast（BETA - 遅延を優先）
+    zh_Hans: 搜索结果的深度 - basic（更快）、advanced（更全面）、fast（BETA - 低延迟高相关性）或 ultra-fast（BETA - 优先考虑延迟）
+    pt_BR: A profundidade dos resultados da pesquisa - básico (mais rápido), avançado (mais abrangente), fast (BETA - baixa latência com alta relevância) ou ultra-fast (BETA - prioriza latência)
+    zh_Hant: 搜索結果的深度 - 基本（更快）、高級（更全面）、fast（BETA - 低延遲高相關性）或 ultra-fast（BETA - 優先考慮延遲）
   label:
     en_US: Search Depth
     ja_JP: 検索深度
@@ -60,6 +60,20 @@ parameters:
         zh_Hans: 高级
         pt_BR: Avançado
         zh_Hant: 高級
+    - value: fast
+      label:
+        en_US: Fast (BETA)
+        ja_JP: Fast (BETA)
+        zh_Hans: 快速 (BETA)
+        pt_BR: Fast (BETA)
+        zh_Hant: 快速 (BETA)
+    - value: ultra-fast
+      label:
+        en_US: Ultra-Fast (BETA)
+        ja_JP: Ultra-Fast (BETA)
+        zh_Hans: 超快速 (BETA)
+        pt_BR: Ultra-Fast (BETA)
+        zh_Hant: 超快速 (BETA)
   default: basic
 - form: form
   description:
