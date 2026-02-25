@@ -170,6 +170,22 @@ parameters:
   type: string
 - form: form
   description:
+    en_US: When enabled, only return results containing the exact phrase(s) inside quotes in the query.
+    ja_JP: 有効にすると、クエリ内の引用符で囲まれた正確なフレーズを含む結果のみを返します。
+    zh_Hans: 启用后，仅返回包含查询中引号内精确短语的结果。
+    pt_BR: Quando ativado, retorna apenas resultados contendo a(s) frase(s) exata(s) entre aspas na consulta.
+    zh_Hant: 啟用後，僅返回包含查詢中引號內精確短語的結果。
+  label:
+    en_US: Exact Match
+    ja_JP: 完全一致
+    zh_Hans: 精确匹配
+    pt_BR: Correspondência exata
+    zh_Hant: 精確匹配
+  name: exact_match
+  type: boolean
+  default: false
+- form: form
+  description:
     en_US: Include images in the search results
     ja_JP: 検索結果に画像を含める
     zh_Hans: 在搜索结果中包含图片
