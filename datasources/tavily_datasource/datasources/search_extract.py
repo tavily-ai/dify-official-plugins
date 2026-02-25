@@ -38,6 +38,7 @@ class TavilySearchExtractDatasource(WebsiteCrawlDatasource):
         include_images = datasource_parameters.get("include_images", False)
         include_answer = datasource_parameters.get("include_answer", True)
         include_raw_content = datasource_parameters.get("include_raw_content", True)
+        exact_match = datasource_parameters.get("exact_match", False)
         
         try:
             # Initialize crawl result
@@ -58,7 +59,8 @@ class TavilySearchExtractDatasource(WebsiteCrawlDatasource):
                 exclude_domains=exclude_domains,
                 include_images=include_images,
                 include_answer=include_answer,
-                include_raw_content=include_raw_content
+                include_raw_content=include_raw_content,
+                exact_match=exact_match
             )
             
             if not search_results.get("results"):
@@ -172,6 +174,10 @@ class TavilySearchExtractDatasource(WebsiteCrawlDatasource):
         # For news topic, add days parameter
         if search_params.get("topic") == "news":
             search_params["days"] = 7  # Last 7 days of news
+        
+        # Add exact_match if explicitly set to True
+        if kwargs.get("exact_match"):
+            search_params["exact_match"] = True
         
         response = requests.post(
             f"{TAVILY_API_URL}/search",

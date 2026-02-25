@@ -149,6 +149,18 @@ parameters:
     llm_description: When set to true, Tavily automatically configures search parameters based on your query.
     required: false
     type: boolean
+  - name: exact_match
+    default: false
+    form: form
+    human_description:
+      en_US: When enabled, only returns results containing the exact phrase(s) in quotes within the query.
+      zh_Hans: 启用时，仅返回包含查询中引号内精确短语的结果。
+    label:
+      en_US: Exact Match
+      zh_Hans: 精确匹配
+    llm_description: When set to true, restricts results to those containing the exact quoted phrase(s) in the query.
+    required: false
+    type: boolean
   - name: include_images
     default: false
     form: form
