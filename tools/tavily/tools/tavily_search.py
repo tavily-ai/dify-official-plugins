@@ -65,6 +65,7 @@ class TavilySearch:
                 "auto_parameters",
                 "include_favicon",
                 "include_usage",
+                "exact_match",
             ]:
                 if isinstance(value, str):
                     processed_params[key] = value.lower() == "true"
