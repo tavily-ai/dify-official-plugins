@@ -255,6 +255,18 @@ parameters:
     llm_description: When set to true, includes API usage information such as token counts and credits used in the response.
     required: false
     type: boolean
+  - name: exact_match
+    default: false
+    form: form
+    human_description:
+      en_US: Only return results containing the exact phrase(s) in quotes in your query.
+      zh_Hans: 仅返回包含查询中引号内精确短语的结果。
+    label:
+      en_US: Exact Match
+      zh_Hans: 精确匹配
+    llm_description: When set to true, only return results containing the exact phrase(s) in quotes in your query.
+    required: false
+    type: boolean
   - name: max_results
     default: 5
     form: form
